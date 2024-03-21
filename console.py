@@ -73,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
                 pline = pline[2].strip()  # pline is now str
                 if pline:
                     # check for *args or **kwargs
-                    if pline[0] == '{' and pline[-1] == '}'\
+                    if pline[0] == '{' and pline[-1] ==  '}'\
                             and type(eval(pline)) is dict:
                         _args = pline
                     else:
@@ -185,11 +185,11 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if c_name not in HBNBCommand.classes:
-            print("** class doesn't exist **")
+            print ("** class doesn't exist **")
             return
 
-        if not c_id:
-            print("** instance id missing **")
+        if  not c_id:
+            print ("** instance id missing **")
             return
 
         key = c_name + "." + c_id
@@ -320,6 +320,7 @@ class HBNBCommand(cmd.Cmd):
                 new_dict.__dict__.update({att_name: att_val})
 
         new_dict.save()  # save updates to file
+
 
     def help_update(self):
         """ Help information for the update class """
